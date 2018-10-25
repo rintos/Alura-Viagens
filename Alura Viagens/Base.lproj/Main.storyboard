@@ -259,23 +259,18 @@
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RSJ-BK-Xpn">
-                                        <rect key="frame" x="0.0" y="36" width="290" height="41"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="41" id="PtG-zf-cTT"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="NVT-8a-TJt">
+                                        <rect key="frame" x="0.0" y="36" width="290" height="56"/>
                                         <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    </searchBar>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 pacotes encontrados" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7HQ-qA-kz3">
-                                        <rect key="frame" x="0.0" y="80" width="290" height="23.5"/>
+                                        <rect key="frame" x="0.0" y="95" width="290" height="23.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="j10-2h-DBW">
-                                        <rect key="frame" x="0.0" y="106.5" width="290" height="392.5"/>
+                                        <rect key="frame" x="0.0" y="121.5" width="290" height="377.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="M1y-gl-Sli">
                                             <size key="itemSize" width="135" height="175"/>
@@ -355,11 +350,62 @@
                     <tabBarItem key="tabBarItem" title="pacotes de viagens" id="8io-jf-tYg"/>
                     <connections>
                         <outlet property="colecaoPacotesViagem" destination="j10-2h-DBW" id="DFL-3j-acU"/>
+                        <outlet property="labelContadorPacotes" destination="7HQ-qA-kz3" id="yDf-eC-tuJ"/>
+                        <outlet property="perquisarViagens" destination="NVT-8a-TJt" id="e6f-M2-fUb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PiS-wf-yF5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="821.25" y="129.92957746478874"/>
+        </scene>
+        <!--Detalhes Viagem View Controller-->
+        <scene sceneID="brT-Pi-I6j">
+            <objects>
+                <viewController storyboardIdentifier="detalhes" id="6Bh-UK-t0x" customClass="DetalhesViagemViewController" customModule="Alura_Viagens" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EYm-sC-fW2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Y1q-Ox-MoD">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yhd-Jl-CZI">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="185"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Porto de Galinhas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lln-v4-YUr">
+                                        <rect key="frame" x="0.0" y="185" width="320" height="31.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="23"/>
+                                        <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pacote: Hotel + cafe da manha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3h-JX-C8w">
+                                        <rect key="frame" x="0.0" y="216.5" width="320" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                        <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 dias" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zuc-eL-sMm">
+                                        <rect key="frame" x="0.0" y="240" width="320" height="328"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                        <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Y1q-Ox-MoD" firstAttribute="trailing" secondItem="eAR-T2-pRM" secondAttribute="trailing" id="Jeb-9n-0Nl"/>
+                            <constraint firstItem="Y1q-Ox-MoD" firstAttribute="leading" secondItem="eAR-T2-pRM" secondAttribute="leading" id="OaE-9v-Ork"/>
+                            <constraint firstItem="Y1q-Ox-MoD" firstAttribute="bottom" secondItem="eAR-T2-pRM" secondAttribute="bottom" id="PUC-1c-UCX"/>
+                            <constraint firstItem="Y1q-Ox-MoD" firstAttribute="top" secondItem="EYm-sC-fW2" secondAttribute="top" id="kQE-WI-QRb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eAR-T2-pRM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WT2-P9-Idv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1676.25" y="129.92957746478874"/>
         </scene>
     </scenes>
 </document>

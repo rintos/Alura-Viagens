@@ -8,16 +8,24 @@
 
 import UIKit
 
-class PacotesViagensViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+class PacotesViagensViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UISearchBarDelegate, UICollectionViewDelegate{
 
     @IBOutlet weak var colecaoPacotesViagem: UICollectionView!
     
-    let listaViagens:Array<Viagem> = ViagemDAO().retornaTodasAsViagens()
+    @IBOutlet weak var perquisarViagens: UISearchBar!
+    
+    @IBOutlet weak var labelContadorPacotes: UILabel!
+    
+    let listaComTodasAsViagens:Array<Viagem> = ViagemDAO().retornaTodasAsViagens()
+    var listaViagens:Array<Viagem> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        listaViagens = listaComTodasAsViagens
         colecaoPacotesViagem.dataSource = self
         colecaoPacotesViagem.delegate = self
+        perquisarViagens.delegate = self
+        self.labelContadorPacotes.text = self.atualizaContador()
         // Do any additional setup after loading the view.
     }
     
@@ -53,9 +61,27 @@ class PacotesViagensViewController: UIViewController,UICollectionViewDataSource,
         return CGSize(width: larguraCollection - 15, height: 175)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "detalhes") as! DetalhesViagemViewController
+        self.present(controller, animated: true, completion: nil)
+    }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+      //  print(searchBar.text!)
+        listaViagens = listaComTodasAsViagens
+        if searchText != "" {
+            let filtroListaViagem = NSPredicate(format: "titulo contains[c] %@", searchText)
+            let listaFiltrada:Array<Viagem> = (listaViagens as NSArray).filtered(using: filtroListaViagem) as! Array
+            listaViagens = listaFiltrada
+        }
+        self.labelContadorPacotes.text = self.atualizaContador()
+        colecaoPacotesViagem.reloadData()
+    }
     
-    
+    func atualizaContador() -> String {
+        return listaViagens.count == 1 ? "1 Pacote encontrado" : "\(listaViagens.count) pacotes encontrados kkkk"
+    }
     
     
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50147EAE2181214400C06F4D /* DetalhesViagemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50147EAD2181214400C06F4D /* DetalhesViagemViewController.swift */; };
 		50FD4A8721758A7100647A3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FD4A8621758A7100647A3B /* AppDelegate.swift */; };
 		50FD4A8921758A7100647A3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FD4A8821758A7100647A3B /* ViewController.swift */; };
 		50FD4A8C21758A7100647A3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50FD4A8A21758A7100647A3B /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50147EAD2181214400C06F4D /* DetalhesViagemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesViagemViewController.swift; sourceTree = "<group>"; };
 		50FD4A8321758A7100647A3B /* Alura Viagens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Alura Viagens.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50FD4A8621758A7100647A3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50FD4A8821758A7100647A3B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +47,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50147EAA2181207800C06F4D /* DetalhesViagem */ = {
+			isa = PBXGroup;
+			children = (
+				50147EAC2181209C00C06F4D /* Controller */,
+				50147EAB2181209200C06F4D /* View */,
+			);
+			path = DetalhesViagem;
+			sourceTree = "<group>";
+		};
+		50147EAB2181209200C06F4D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		50147EAC2181209C00C06F4D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				50147EAD2181214400C06F4D /* DetalhesViagemViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		50FD4A7A21758A7100647A3B = {
 			isa = PBXGroup;
 			children = (
@@ -64,10 +90,11 @@
 		50FD4A8521758A7100647A3B /* Alura Viagens */ = {
 			isa = PBXGroup;
 			children = (
-				50FD4AA4217EB0D500647A3B /* Pacotes */,
-				50FD4A8621758A7100647A3B /* AppDelegate.swift */,
 				50FD4AA22178279B00647A3B /* Model */,
 				50FD4A9E2178271800647A3B /* Home */,
+				50FD4AA4217EB0D500647A3B /* Pacotes */,
+				50147EAA2181207800C06F4D /* DetalhesViagem */,
+				50FD4A8621758A7100647A3B /* AppDelegate.swift */,
 				50FD4AA3217827B700647A3B /* ViagemDAO */,
 				50FD4A8A21758A7100647A3B /* Main.storyboard */,
 				50FD4A8D21758A7E00647A3B /* Assets.xcassets */,
@@ -217,6 +244,7 @@
 				50FD4A9D2177E3B800647A3B /* TableViewCell.swift in Sources */,
 				50FD4A8921758A7100647A3B /* ViewController.swift in Sources */,
 				50FD4A992176BFA600647A3B /* Viagem.swift in Sources */,
+				50147EAE2181214400C06F4D /* DetalhesViagemViewController.swift in Sources */,
 				50FD4A8721758A7100647A3B /* AppDelegate.swift in Sources */,
 				50FD4AA8217EB13200647A3B /* PacotesViagensViewController.swift in Sources */,
 				50FD4AAA217EB3DB00647A3B /* PacoteViagemCollectionViewCell.swift in Sources */,
